@@ -9,6 +9,10 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
 
   @ViewChild('f') myform
+  defaultQuestion = 'pet'
+  answar = '';
+  
+  checkSubmitted : boolean = false;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -23,5 +27,6 @@ export class AppComponent {
   onSubmit(form:NgForm){
     console.log("submitted!");
     console.log(this.myform);
+    this.checkSubmitted = true;
   }
 }
